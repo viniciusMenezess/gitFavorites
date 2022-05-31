@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --odd-bg: hsl(194, 64%, 6%, 50%);
+  --even-bg: hsl(191, 65%, 7%);
+  --search-bg: hsl(191, 65%, 7%);
+  --button-bg: hsl(195, 91%, 25%);
+  --header-table: hsl(194, 72%, 13%);
+  --text-color: hsl(240, 6%, 51%);
+  --border-table: hsl(191, 100%, 76%);
+  --table-header-text: hsl(240, 9%, 89%);
+}
+
+body {
+  background: black;
+}
+
+body * {
+  font-family: 'JetBrains Mono', sans-serif;
+  color: white;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+#app {
+  padding: 11.5rem 16rem;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 8.7rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+
+  gap: 0.8rem;
+}
+
+.search input {
+  width: 64rem;
+  height: 4.8rem;
+
+  color: white;
+  background-color: var(--search-bg);
+
+  font-size: 1.6rem;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  padding: 1.6rem;
+}
+
+.search input::placeholder {
+  color: var(--text-color);
+}
+
+.search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
+  width: 17rem;
+  height: 4.8rem;
+
+  background: var(--button-bg);
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: bold;
+
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  box-shadow: 0 1rem 2rem -1rem var(--border-table);
+}
+
+table thead {
+  background-color: var(--header-table);
+}
+
+table thead th {
+  font-size: 2rem;
+  color: var(--table-header-text);
+  padding: 1.6rem 0 1.6rem 4rem;
+}
+
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+  text-align: left;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+  text-align: left;
+}
+
+table tr:nth-child(even) {
+  background: var(--even-bg);
+}
+
+table tr:nth-child(odd) {
+  background: var(--odd-bg);
+}
+
+table td {
+  padding: 2.8rem;
+  text-align: left;
+  font-size: 2rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user a {
+  text-decoration: none;
+}
+
+td.user a p {
+  font-weight: bold;
+}
+
+td.user span {
+  font-size: 1.7rem;
+  color: var(--table-header-text);
+}
+
+.repositories,
+.followers {
+  text-align: center;
+}
+
+td > button.remove {
+  background: none;
+  border: none;
+
+  font-size: 2rem;
+
+  margin-left: 1rem;
+
+  color: #f75a68;
+
+  cursor: pointer;
+}
